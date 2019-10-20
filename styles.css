@@ -67,6 +67,27 @@ textarea {
   flex-basis: 400px;
 }
 
+.instruction {
+  margin-left: 65px;
+  margin-top: 40px;
+}
+
+.rating-container {
+  margin-left: 65px;
+}
+
+.rating-circle {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+}
+
+.rating-selected {
+  background: gold;
+}
+
 .button-div {
   text-align: center;
   display: flex;
