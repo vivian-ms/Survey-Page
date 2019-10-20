@@ -1,0 +1,41 @@
+body {
+  font-size: 16px;
+  background: lavender;
+  color: blue;
+}
+
+* {
+  font-family: 'Oswald', sans-serif;
+}
+
+#web-title {
+  text-align: right;
+  letter-spacing: 0.8rem;
+}
+
+#title {
+  text-align: center;
+}
+
+.heading {
+  color: #7462E0;
+  font-family: 'Lobster', curvive;
+}
+
+.form-container {
+  background: #f0e6fa;
+  width: 95%;
+  margin: 10px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 10px #cfcfe1;
+}
+
+#description {
+  margin-bottom: 50px;
+  line-height: 2rem;
+}
+
+.author {
+  font-size: 0.7rem;
+}
