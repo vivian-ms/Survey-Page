@@ -36,6 +36,50 @@ body {
   line-height: 2rem;
 }
 
+.row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 20px 50px;
+  padding: 5px;
+}
+
+.label {
+  flex-basis: 70px;
+}
+
+span {
+  color: red;
+}
+
+label {
+  margin-right: 20px;
+  padding: 10px;
+}
+
+input, select, textarea {
+  flex: 1;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea {
+  flex-basis: 400px;
+}
+
+.button-div {
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+  background: blue;
+  color: gold;
+}
+
 .author {
   font-size: 0.7rem;
 }

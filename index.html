@@ -18,9 +18,56 @@
       </p>
 
       <form id="survey-form">
+        <!-- ********** Name ********** -->
+        <div class="row">
+          <label for="name" id="name-label" class="label"><span>* </span>Name:</label>
+          <input type="text" id="name" placeholder="Enter your name" required>
+        </div>  <!--  End name -->
 
-      </form>
-    </div>
+        <!-- ********** Email ********** -->
+        <div class="row">
+          <label for="email" id="email-label" class="label"><span>* </span>Email:</label>
+          <input type="email" id="email" placeholder="Enter your email" required>
+        </div>  <!-- End email -->
+
+        <!-- ********** Age ********** -->
+        <div class="row">
+          <label for="age" id="age-label" class="label"><span>* </span>Age:</label>
+          <input type="number" id="age" min="1" max="100" placeholder="Age" required>
+        </div>  <!-- End age -->
+
+        <!-- ********** Average use time ********** -->
+        <div class="row">
+          <label for="number" id="number-label">On average, how many hours each week do you use the app?</label>
+          <input type="number" id="number" min="0" max="50" placeholder="Hours">
+        </div>  <!--  End average use time -->
+
+        <!-- Usual place of app use -->
+        <div class="row">
+          <label for="dropdown" id="dropdown-label">Where do you usually use the app:</label>
+          <select id="dropdown" name="role">
+            <option selected disabled>Choose an option</option>
+            <option value="school">School</option>
+            <option value="work">Work</option>
+            <option value="gym_workout">Gym / Workout</option>
+            <option value="car">Car</option>
+            <option value="other">Other</option>
+          </select>
+        </div>  <!-- End usual place of app use -->
+
+        <!-- ********** Comments ********** -->
+        <div class="row">
+          <label for="comment">What would you suggest to make the app better?</label>
+          <textarea id="comment" rows="10" placeholder="Please leave a comment"></textarea>
+        </div>  <!-- End comments -->
+
+        <!-- ********** Buttons ********** -->
+        <div class="button-div">
+          <button type="reset" id="reset">Reset Form</button>
+          <button type="submit" id="submit">Submit!</button>
+        </div>  <!-- End buttons -->
+      </form>  <!-- End #survey-form -->
+    </div>  <!-- End .form-container -->
 
     <footer>
       <p class="author">
@@ -29,5 +76,8 @@
     </footer>
 
     <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="script.js"></script>
   </body>
   </html>
