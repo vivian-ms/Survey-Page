@@ -1,23 +1,32 @@
 $(function() {
   // Event listener for form submit
   $('#survey-form').on('submit', function(evt) {
-    // Prevent form from submitting
-    evt.preventDefault();
+    evt.preventDefault();  // Prevent form from submitting
+    window.scrollTo(0, 0);  // Scroll to top of window
     alert('Thank you for your feedback!');
   });
 
-  // Event listener for clicking rating circle
-  $('.rating-container').on('click', '.rating-circle' , function(evt) {
-    // 1) Remove .rating-selected from all rating circles
-    $('.rating-circle').removeClass('rating-selected');
 
-    // 2) Add .rating-selected to the clicked rating circle and all rating circles before it
-    $(this).addClass('rating-selected');
-    $(this).prevAll('.rating-circle').addClass('rating-selected');
+  // Event listener for clicking stars
+  $('.rating-container').on('click', '.fa' , function(evt) {
+    // Remove .fa-star and add .fa-star-o to all stars
+    $('.fa').removeClass('fa-star').addClass('fa-star-o');
+
+    // Remove .fa-star-o and add .fa-star to the clicked star and all stars before it
+    $(this).removeClass('fa-star-o').addClass('fa-star');
+    $(this).prevAll('.fa').addClass('fa-star').removeClass('fa-star-o');
   });
 
-  // Event listener for clicking radio button or checkbox
-  $('.custom').on('click', function(evt) {
+
+  // Event listener for clicking radio button div
+  $('.radio').on('click', function(evt) {
+    let input = $(this).children('input');
+    input.prop('checked', true);
+  });
+
+
+  // Event listener for clicking checkbox div
+  $('.checkbox').on('click', function(evt) {
     let input = $(this).children('input');
     if (input.is(':checked')) {
       // If checked, uncheck it
@@ -28,8 +37,10 @@ $(function() {
     }
   });
 
+
   // Event listener for reset button
   $('#reset').on('click', function(evt) {
-    $('.rating-circle').removeClass('rating-selected');
+    $('.fa').removeClass('fa-star').addClass('fa-star-o');
+    window.scrollTo(0, 0);
   });
 });

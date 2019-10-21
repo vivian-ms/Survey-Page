@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Lobster|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Survey Form</title>
   </head>
@@ -13,145 +15,155 @@
     <div class="form-container">
       <h2 id="title" class="heading">Feedback Survey</h2>
 
-      <p id="description">
-        Thank you for using our app. Please fill out this survey to let us know your experience with the app and how we can improve it.
-      </p>
+      <div class="container-fluid">
+        <p id="description">
+          Thank you for using our app. Please fill out this survey to let us know your experience with the app and how we can improve it.
+        </p>
 
-      <form id="survey-form">
-        <!-- ********** Name ********** -->
-        <div class="row">
-          <label for="name" id="name-label" class="label"><span>* </span>Name:</label>
-          <input type="text" id="name" placeholder="Enter your name" required>
-        </div>  <!--  End name -->
+        <form id="survey-form">
+          <!-- ********** Name ********** -->
+          <div class="form-group form-row">
+            <label for="name" id="name-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Name:</label>
+            <div class="col">
+              <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+            </div>
+          </div> <!-- End name -->
 
-        <!-- ********** Email ********** -->
-        <div class="row">
-          <label for="email" id="email-label" class="label"><span>* </span>Email:</label>
-          <input type="email" id="email" placeholder="Enter your email" required>
-        </div>  <!-- End email -->
+          <!-- ********** Email ********** -->
+          <div class="form-group form-row">
+            <label for="email" id="email-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Email:</label>
+            <div class="col">
+              <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
+            </div>
+          </div>  <!-- End email -->
 
-        <!-- ********** Age ********** -->
-        <div class="row">
-          <label for="age" id="age-label" class="label"><span>* </span>Age:</label>
-          <input type="number" id="age" min="1" max="100" placeholder="Age" required>
-        </div>  <!-- End age -->
+          <!-- ********** Age ********** -->
+          <div class="form-group form-row">
+            <label for="age" id="age-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Age:</label>
+            <div class="col">
+              <input type="number" id="age" class="form-control" min="1" max="100" placeholder="Age" required>
+            </div>
+          </div>  <!-- End age -->
 
-        <!-- ********** Rating ********** -->
-        <p class="instruction">What overall rating would you give us?</p>
-        <div id="rating" class="rating-container">
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-          <div class="rating-circle"></div>
-        </div>  <!-- End rating -->
+          <!-- ********** Rating ********** -->
+          <p class="instruction">What overall rating would you give us?</p>
+          <div id="rating" class="rating-container mb-4">
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+            <span class="fa fa-star-o fa-2x"></span>
+          </div>  <!-- End rating -->
 
-        <!-- ********** Average use time ********** -->
-        <div class="row">
-          <label for="number" id="number-label">On average, how many hours each week do you use the app?</label>
-          <input type="number" id="number" min="0" max="50" placeholder="Hours">
-        </div>  <!--  End average use time -->
+          <!-- ********** Average time of use ********** -->
+          <div class="form-group form-row">
+            <label for="number" id="number-label" class="col-auto col-form-label">On average, how many hours each week do you use the app?</label>
+            <div class="col number-input-div">
+              <input type="number" id="number" class="form-control" min="0" max="50" placeholder="Hours">
+            </div>
+          </div>  <!-- End average time of use -->
 
-        <!-- Usual place of app use -->
-        <div class="row">
-          <label for="dropdown" id="dropdown-label">Where do you usually use the app:</label>
-          <select id="dropdown" name="role">
-            <option selected disabled>Choose an option</option>
-            <option value="school">School</option>
-            <option value="work">Work</option>
-            <option value="gym_workout">Gym / Workout</option>
-            <option value="car">Car</option>
-            <option value="other">Other</option>
-          </select>
-        </div>  <!-- End usual place of app use -->
+          <!-- ********** Usual place to use app ********** -->
+          <div class="form-group form-row">
+            <label for="dropdown" id="dropdown-label" class="col-auto col-form-label">Where do you usually use the app:</label>
+            <select id="dropdown" class="form-control col" name="app_use">
+              <option value="" selected disabled>Choose an option</option>
+              <option value="school">School</option>
+              <option value="work">Work</option>
+              <option value="gym_workout">Gym / Workout</option>
+              <option value="car">Car</option>
+              <option value="other">Other</option>
+            </select>
+          </div>  <!-- End usual place to use app -->
 
-        <!-- ********** Usually listen to ********** -->
-        <p class="instruction">What do you usually listen to:</p>
-        <div class="select-container">
-          <div id="radio-div" class="custom radio">
-            <input type="radio" id="radio" name="listen" value="radio">
-            <label for="radio" id="radio-label">Live radio</label>
-          </div>
-          <div id="podcast-div" class="custom radio">
-            <input type="radio" id="podcast" name="listen" value="podcast">
-            <label for="podcast" id="podcast-label">Podcast</label>
-          </div>
-          <div id="playlist-div" class="custom radio">
-            <input type="radio" id="playlist" name="listen" value="playlist">
-            <label for="playlist" id="playlist-label">Custom playlist</label>
-          </div>
-        </div>  <!-- End usually listen to -->
+          <!-- ********** Usually listen to ********** -->
+          <p class="instruction">What do you usually listen to:</p>
+          <div class="selection-container">
+            <div id="radio-div" class="custom radio">
+              <input type="radio" id="radio" name="listen" value="radio">
+              <label for="radio" id="radio-label">Live radio</label>
+            </div>
+            <div id="podcast-div" class="custom radio">
+              <input type="radio" id="podcast" name="listen" value="podcast">
+              <label for="podcast" id="podcast-label">Podcast</label>
+            </div>
+            <div id="playlist-div" class="custom radio">
+              <input type="radio" id="playlist" name="listen" value="playlist">
+              <label for="playlist" id="playlist-label">Custom playlist</label>
+            </div>
+          </div>  <!-- End usually listen to -->
 
-        <!-- Favorite genres -->
-        <p class="instruction">Please select all your favorite genres</p>
-        <div class="select-container">
-          <div class="custom checkbox">
-            <input type="checkbox" id="alternative" value="alternative">
-            <label for="alternative" id="alternative-label">Alternative</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="blues" value="blues">
-            <label for="blues" id="blues-label">Blues</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="classical" value="classical">
-            <label for="classical" id="classical-label">Classical</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="comedy" value="comedy">
-            <label for="comedy" id="comedy-label">Comedy</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="country" value="country">
-            <label for="country" id="country-label">Country</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="edm" value="edm">
-            <label for="edm" id="edm-label">EDM</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="hiphop" value="hiphop">
-            <label for="hiphop" id="hiphop-label">Hip Hop</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="jazz" value="jazz">
-            <label for="jazz" id="jazz-label">Jazz</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="oldies" value="oldies">
-            <label for="oldies" id="oldies-label">Oldies</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="pop" value="pop">
-            <label for="pop" id="pop-label">Pop Music</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="rb" value="rb">
-            <label for="rb" id="rb-label">R & B</label>
-          </div>
-          <div class="custom checkbox">
-            <input type="checkbox" id="rock" value="rock">
-            <label for="rock" id="rock-label">Rock</label>
-          </div>
-        </div>  <!-- End favorite genres -->
+          <!-- ********** Favorite genres ********** -->
+          <p class="instruction">Please select all your favorite genres</p>
+          <div class="selection-container">
+            <div class="custom checkbox">
+              <input type="checkbox" id="alternative" value="alternative">
+              <label for="alternative" id="alternative-label">Alternative</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="blues" value="blues">
+              <label for="blues" id="blues-label">Blues</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="classical" value="classical">
+              <label for="classical" id="classical-label">Classical</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="comedy" value="comedy">
+              <label for="comedy" id="comedy-label">Comedy</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="country" value="country">
+              <label for="country" id="country-label">Country</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="edm" value="edm">
+              <label for="edm" id="edm-label">EDM</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="hiphop" value="hiphop">
+              <label for="hiphop" id="hiphop-label">Hip Hop</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="jazz" value="jazz">
+              <label for="jazz" id="jazz-label">Jazz</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="oldies" value="oldies">
+              <label for="oldies" id="oldies-label">Oldies</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="pop" value="pop">
+              <label for="pop" id="pop-label">Pop Music</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="rb" value="rb">
+              <label for="rb" id="rb-label">R & B</label>
+            </div>
+            <div class="custom checkbox">
+              <input type="checkbox" id="rock" value="rock">
+              <label for="rock" id="rock-label">Rock</label>
+            </div>
+          </div>  <!-- End favorite genres -->
 
-        <!-- ********** Comments ********** -->
-        <div class="row">
-          <label for="comment">What would you suggest to make the app better?</label>
-          <textarea id="comment" rows="10" placeholder="Please leave a comment"></textarea>
-        </div>  <!-- End comments -->
+          <!-- ********** Comments ********** -->
+          <div class="form-group">
+            <label for="comment" class="col-form-label">What would you suggest to make the app better?</label>
+            <textarea id="comment" class="form-control" rows="10" placeholder="Please leave a comment"></textarea>
+          </div>  <!-- End comments -->
 
-        <!-- ********** Buttons ********** -->
-        <div class="button-div">
-          <button type="reset" id="reset">Reset Form</button>
-          <button type="submit" id="submit">Submit!</button>
-        </div>  <!-- End buttons -->
-      </form>  <!-- End #survey-form -->
+          <!-- ********** Buttons ********** -->
+          <div class="form-row">
+            <button type="reset" id="reset" class="col-4 btn btn-secondary">Reset Form</button>
+            <button type="submit" id="submit" class="offset-4 col-4 btn btn-primary">Submit!</button>
+          </div>  <!-- End buttons -->
+        </form>  <!-- End #survey-form -->
+      </div>  <!-- End .container-fluid -->
     </div>  <!-- End .form-container -->
 
     <footer>

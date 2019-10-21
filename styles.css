@@ -9,11 +9,15 @@ body {
 }
 
 #web-title {
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: bold;
   text-align: right;
   letter-spacing: 0.8rem;
 }
 
 #title {
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -23,82 +27,43 @@ body {
 }
 
 .form-container {
-  background: #f0e6fa;
-  width: 95%;
+  width: 80%;
   margin: 10px auto;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 5px 5px 15px 10px #cfcfe1;
+  background: #f0e6fa;
+}
+
+.container-fluid {
+  width: 90%;
 }
 
 #description {
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   line-height: 2rem;
 }
 
-.row {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
-  margin: 20px 50px;
-  padding: 5px;
-}
-
-.label {
-  flex-basis: 70px;
-}
-
-span {
+.required {
   color: red;
 }
 
-label {
-  margin-right: 20px;
-  padding: 10px;
-}
-
-input, select, textarea {
-  flex: 1;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-textarea {
-  flex-basis: 400px;
-}
-
 .instruction {
-  margin-left: 65px;
-  margin-top: 40px;
+  margin-bottom: 16px;
 }
 
-.rating-container {
-  margin-left: 65px;
+.number-input-div {
+  flex-basis: 100px;
 }
 
-.rating-circle {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border: 1px solid black;
-  border-radius: 50%;
+.fa {
+  color: black;
+  margin-right: 2px;
 }
 
-.rating-selected {
-  background: gold;
-}
-
-.button-div {
-  text-align: center;
-  display: flex;
-  justify-content: space-around;
-}
-
-button {
-  padding: 10px;
-  border-radius: 10px;
-  background: blue;
-  color: gold;
+.fa-star {
+  color: yellow;
 }
 
 .author {
@@ -108,11 +73,9 @@ button {
 
 
 /* ########## Custom Radio Button + Checkbox ########## */
-.select-container {
+.selection-container {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  margin-left: 65px;
 }
 
 /* Hide the default radio button / checkbox */
@@ -124,25 +87,27 @@ button {
 .custom {
   position: relative;
   box-sizing: border-box;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 
-  /* Default background for each div */
+  /* Background for each custom radio button / checkbox div */
   background-image: url('https://i.pinimg.com/originals/44/bf/af/44bfaf7f725670091de541e948274374.jpg');
   background-repeat: no-repeat;
   background-size: contain;
 
-  /* Size of each div */
+  /* Size of each radio button / checkbox div */
   width: 161.3px;
   height: 121px;
-  border-radius: 10px;
-  margin-bottom: 10px;
 }
 
 .custom label {
   position: relative;
   color: gold;
-  /* font-family: 'Comic Sans MS'; */
 }
 
+/* label::before = fake radio button / checkbox
+   label::after = fake dot / checkmark */
 .custom label::before, .custom label::after {
   position: absolute;
   content: "";
@@ -172,17 +137,18 @@ button {
 
 /* ########## Custom Radio Button ########## */
 .radio label {
-  /* Use padding to move radio label */
   display: inline-block;
-  padding-top: 0px;
-  padding-left: 61px;
+
+  /* Use padding to move radio label */
+  padding-top: 10px;
+  padding-left: 45px;
 }
 
 /* Fake radio button */
 .radio label::before{
   /* Use top and left to move the fake radio button */
-  top: 1px;
-  left: 34px;
+  top: 12px;
+  left: 20px;
 
   /* Create fake radio buttom */
   border-radius: 50%;
@@ -190,15 +156,16 @@ button {
 
 /* Dot for the fake radio button */
 .radio label::after {
+  background: gold;
+
   /* Use top and left to move the dot */
-  top: 7px;
-  left: 40px;
+  top: 17px;
+  left: 25px;
 
   /* Size of the dot */
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: gold;
 }
 /* ########## End Custom Radio Button ########## */
 
@@ -206,24 +173,25 @@ button {
 
 /* ########## Custom Checkbox ########## */
 .checkbox label {
-  /* Use padding to move checkbox label */
   display: inline-block;
-  padding-top: 0px;
-  padding-left: 85px;
+
+  /* Use padding to move checkbox label */
+  padding-top: 10px;
+  padding-left: 45px;
 }
 
 /* Fake checkbox */
 .checkbox label::before{
   /* Use top and left to move the fake checkbox */
-  top: 0px;
-  left: 55px;
+  top: 12px;
+  left: 20px;
 }
 
 /* Checkmark for the fake checkbox */
 .checkbox label::after {
   /* Use top and left to move the checkmark */
-  top: 6px;
-  left: 61px;
+  top: 18px;
+  left: 25px;
 
   /* Size of the checkmark */
   height: 5px;
@@ -239,15 +207,9 @@ button {
 
 
 /* ########## Media Query ########## */
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .form-container {
-    width: 80%;
-  }
-}
-
-@media screen and (min-width: 980px) {
-  #description {
-    text-align: center;
+    width: 95%;
   }
 }
 /* ########## End Media Query ########## */
