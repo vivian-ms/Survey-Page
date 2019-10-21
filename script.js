@@ -16,6 +16,18 @@ $(function() {
     $(this).prevAll('.rating-circle').addClass('rating-selected');
   });
 
+  // Event listener for clicking radio button or checkbox
+  $('.custom').on('click', function(evt) {
+    let input = $(this).children('input');
+    if (input.is(':checked')) {
+      // If checked, uncheck it
+      input.prop('checked', false);
+    } else {
+      // If unchecked, check it
+      input.prop('checked', true);
+    }
+  });
+
   // Event listener for reset button
   $('#reset').on('click', function(evt) {
     $('.rating-circle').removeClass('rating-selected');

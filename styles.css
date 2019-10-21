@@ -104,3 +104,150 @@ button {
 .author {
   font-size: 0.7rem;
 }
+
+
+
+/* ########## Custom Radio Button + Checkbox ########## */
+.select-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin-left: 65px;
+}
+
+/* Hide the default radio button / checkbox */
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  opacity: 0;
+}
+
+.custom {
+  position: relative;
+  box-sizing: border-box;
+
+  /* Default background for each div */
+  background-image: url('https://i.pinimg.com/originals/44/bf/af/44bfaf7f725670091de541e948274374.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  /* Size of each div */
+  width: 161.3px;
+  height: 121px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.custom label {
+  position: relative;
+  color: gold;
+  /* font-family: 'Comic Sans MS'; */
+}
+
+.custom label::before, .custom label::after {
+  position: absolute;
+  content: "";
+}
+
+/* Size of fake radio button / checkbox */
+.custom label::before {
+  height: 20px;
+  width: 20px;
+  border: 1px solid gold;
+}
+
+/* Hide the dot and checkmark by default */
+.radio input[type="radio"] + label::after,
+.checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/* Unhide on the selected state */
+.radio input[type="radio"]:checked + label::after,
+.checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+/* ########## End Custom Radio Button + Checkbox ########## */
+
+
+
+/* ########## Custom Radio Button ########## */
+.radio label {
+  /* Use padding to move radio label */
+  display: inline-block;
+  padding-top: 0px;
+  padding-left: 61px;
+}
+
+/* Fake radio button */
+.radio label::before{
+  /* Use top and left to move the fake radio button */
+  top: 1px;
+  left: 34px;
+
+  /* Create fake radio buttom */
+  border-radius: 50%;
+}
+
+/* Dot for the fake radio button */
+.radio label::after {
+  /* Use top and left to move the dot */
+  top: 7px;
+  left: 40px;
+
+  /* Size of the dot */
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background: gold;
+}
+/* ########## End Custom Radio Button ########## */
+
+
+
+/* ########## Custom Checkbox ########## */
+.checkbox label {
+  /* Use padding to move checkbox label */
+  display: inline-block;
+  padding-top: 0px;
+  padding-left: 85px;
+}
+
+/* Fake checkbox */
+.checkbox label::before{
+  /* Use top and left to move the fake checkbox */
+  top: 0px;
+  left: 55px;
+}
+
+/* Checkmark for the fake checkbox */
+.checkbox label::after {
+  /* Use top and left to move the checkmark */
+  top: 6px;
+  left: 61px;
+
+  /* Size of the checkmark */
+  height: 5px;
+  width: 9px;
+
+  /* Create checkmark using the border and transform properties */
+  border-left: 3px solid;
+  border-bottom: 3px solid;
+  transform: rotate(-45deg);
+}
+/* ########## End Custom Checkbox ########## */
+
+
+
+/* ########## Media Query ########## */
+@media screen and (min-width: 800px) {
+  .form-container {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 980px) {
+  #description {
+    text-align: center;
+  }
+}
+/* ########## End Media Query ########## */
