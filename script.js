@@ -8,7 +8,7 @@ $(function() {
 
 
   // Event listener for clicking stars
-  $('.rating-container').on('click', '.fa' , function(evt) {
+  $('#rating').on('click', '.fa' , function(evt) {
     // Remove .fa-star and add .fa-star-o to all stars
     $('.fa').removeClass('fa-star').addClass('fa-star-o');
 
