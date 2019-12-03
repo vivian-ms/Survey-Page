@@ -23,7 +23,7 @@
         <form id="survey-form">
           <!-- ********** Name ********** -->
           <div class="form-group form-row">
-            <label for="name" id="name-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Name:</label>
+            <label for="name" id="name-label" class="col-2 col-lg-1 col-form-label required">Name:</label>
             <div class="col">
               <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
             </div>
@@ -31,7 +31,7 @@
 
           <!-- ********** Email ********** -->
           <div class="form-group form-row">
-            <label for="email" id="email-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Email:</label>
+            <label for="email" id="email-label" class="col-2 col-lg-1 col-form-label required">Email:</label>
             <div class="col">
               <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
             </div>
@@ -39,7 +39,7 @@
 
           <!-- ********** Age ********** -->
           <div class="form-group form-row">
-            <label for="age" id="age-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Age:</label>
+            <label for="age" id="age-label" class="col-2 col-lg-1 col-form-label required">Age:</label>
             <div class="col">
               <input type="number" id="age" class="form-control" min="1" max="100" placeholder="Age" required>
             </div>
@@ -63,7 +63,7 @@
           <!-- ********** Average time of use ********** -->
           <div class="form-group form-row">
             <label for="number" id="number-label" class="col-auto col-form-label">On average, how many hours each week do you use the app?</label>
-            <div class="col number-input-div">
+            <div id="number-input-div" class="col">
               <input type="number" id="number" class="form-control" min="0" max="50" placeholder="Hours">
             </div>
           </div>  <!-- End average time of use -->
