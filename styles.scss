@@ -1,0 +1,235 @@
+// Variables
+$Oswald: 'Oswald', sans-serif;
+$Lobster: 'Lobster', cursive;
+
+// Mixins
+@mixin mQ_maxWidth($w) {
+  @media screen and (max-width: $w) {
+    @content;
+  }
+}
+
+// Functions
+@function tint($color, $percentage) {
+  @return mix(white, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(black, $color, $percentage);
+}
+
+
+body {
+  background: lavender;
+  color: blue;
+}
+
+
+* {
+  font-family: $Oswald;
+}
+
+
+#title {
+  padding: 20px;
+  text-align: right;
+  letter-spacing: 0.8rem;
+  color: #51459d;
+  font: {
+    family: $Lobster;
+    size: 2rem;
+    weight: bold;
+  }
+}
+
+
+#form-title {
+  color: tint(#51459d, 20%);
+  text-align: center;
+  font: {
+    family: $Lobster;
+    size: 2rem;
+  }
+}
+
+
+.form-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #f0e6fa;
+  box-shadow: 5px 5px 15px 10px shade(#f0e6fa, 50%);
+
+  @include mQ_maxWidth(800px) {
+    width: 95%;
+  }
+
+  .container-fluid {
+    width: 90%;
+  }
+
+  #description {
+    line-height: 2rem;
+    margin: {
+      top: 20px;
+      bottom: 20px;
+    }
+  }
+
+  .required::before {
+    content: '*';
+    margin-right: 5px;
+    color: red;
+    font-weight: bold;
+  }
+
+  .instruction {
+    margin-bottom: 16px;
+  }
+
+  #number-input-div {
+    flex-basis: 100px;
+  }
+
+  #dropdown {
+    flex-basis: 150px;
+  }
+
+  .fa {
+    color: black;
+    margin-right: 2px;
+  }
+
+  .fa-star {
+    color: yellow;
+  }
+}  // End .form-container
+
+
+.custom-container {
+  display: flex;
+  flex-flow: row wrap;
+
+  .custom {
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 161.3px;
+    height: 121px;
+    margin: {
+      right: 20px;
+      bottom: 20px;
+    }
+    // Background for each custom radio button / checkbox div
+    background: {
+      image: url('https://i.pinimg.com/originals/44/bf/af/44bfaf7f725670091de541e948274374.jpg');
+      repeat: no-repeat;
+      size: contain;
+    }
+
+    input {
+      // Hide the default radio button / checkbox
+      opacity: 0;
+
+      // Unhide dot / checkmark on the selected state
+      &:checked + label::after {
+        content: "";
+      }
+    }
+
+    label {
+      position: relative;
+      color: gold;
+
+      // label::before = fake radio button / checkbox
+      &::before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        border: 1px solid gold;
+      }
+
+      // label::after = fake dot / checkmark
+      &::after {
+        position: absolute;
+        content: none;  // Hide dot / checkmark by default
+      }
+    }  // End .custom label
+  }  // End .custom
+
+  .radio label {
+    display: inline-block;
+
+     // Position label
+    padding: {
+      top: 10px;
+      left: 45px;
+    }
+
+    // Fake radio button
+    &::before {
+      // Position fake radio button
+      top: 12px;
+      left: 20px;
+
+      // Create fake radio buttom
+      border-radius: 50%;
+    }
+
+    // Dot for fake radio button
+    &::after {
+      background: gold;
+
+      // Position the fake dot
+      top: 17px;
+      left: 25px;
+
+      // Size of the fake dot
+      height: 10px;
+      width: 10px;
+      border-radius: 50%;
+    }  // End .radio label::after
+  }  // End .radio label
+
+  .checkbox label {
+    display: inline-block;
+
+    // Position label
+    padding: {
+      top: 10px;
+      left: 45px;
+    }
+
+    // Fake checkbox
+    &::before {
+      // Position fake checkbox
+      top: 12px;
+      left: 20px;
+    }
+
+    // Checkmark for the fake checkbox
+    &::after {
+      // Position fake checkmark
+      top: 18px;
+      left: 25px;
+
+      // Size of the fake checkmark
+      height: 5px;
+      width: 9px;
+
+      // Create fake checkmark using border and transform properties
+      transform: rotate(-45deg);
+      border: {
+        left: 3px solid;
+        bottom: 3px solid;
+      }
+    }  // End .checkbox label::after
+  }  // End .checkbox label
+}  // End .custom-container
+
+
+.author {
+  font-size: 0.7rem;
+}
