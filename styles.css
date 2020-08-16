@@ -1,215 +1,129 @@
 body {
-  font-size: 16px;
   background: lavender;
-  color: blue;
-}
+  color: blue; }
 
 * {
-  font-family: 'Oswald', sans-serif;
-}
+  font-family: "Oswald", sans-serif; }
 
 #title {
   padding: 20px;
-  font-size: 2rem;
-  font-weight: bold;
   text-align: right;
   letter-spacing: 0.8rem;
-}
+  color: #51459d;
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+  font-weight: bold; }
 
 #form-title {
-  font-size: 2rem;
+  color: #746ab1;
   text-align: center;
-}
-
-.heading {
-  color: #7462E0;
-  font-family: 'Lobster', curvive;
-}
+  font-family: "Lobster", cursive;
+  font-size: 2rem; }
 
 .form-container {
   width: 80%;
-  margin: 10px auto;
+  margin: 20px auto;
   padding: 20px;
   border-radius: 10px;
-  box-shadow: 5px 5px 15px 10px #cfcfe1;
   background: #f0e6fa;
-}
+  -webkit-box-shadow: 5px 5px 15px 10px #78737d;
+  box-shadow: 5px 5px 15px 10px #78737d; }
+  @media screen and (max-width: 800px) {
+    .form-container {
+      width: 95%; } }
+  .form-container .container-fluid {
+    width: 90%; }
+  .form-container #description {
+    line-height: 2rem;
+    margin-top: 20px;
+    margin-bottom: 20px; }
+  .form-container .required::before {
+    content: '*';
+    margin-right: 5px;
+    color: red;
+    font-weight: bold; }
+  .form-container .instruction {
+    margin-bottom: 16px; }
+  .form-container #number-input-div {
+    -ms-flex-preferred-size: 100px;
+    flex-basis: 100px; }
+  .form-container #dropdown {
+    -ms-flex-preferred-size: 150px;
+    flex-basis: 150px; }
+  .form-container .fa {
+    color: black;
+    margin-right: 2px; }
+  .form-container .fa-star {
+    color: yellow; }
 
-.container-fluid {
-  width: 90%;
-}
-
-#description {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  line-height: 2rem;
-}
-
-.required {
-  color: red;
-}
-
-.instruction {
-  margin-bottom: 16px;
-}
-
-.number-input-div {
-  flex-basis: 100px;
-}
-
-.fa {
-  color: black;
-  margin-right: 2px;
-}
-
-.fa-star {
-  color: yellow;
-}
+.custom-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap; }
+  .custom-container .custom {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: 161.3px;
+    height: 121px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    background-image: url("https://i.pinimg.com/originals/44/bf/af/44bfaf7f725670091de541e948274374.jpg");
+    background-repeat: no-repeat;
+    background-size: contain; }
+    .custom-container .custom input {
+      opacity: 0; }
+      .custom-container .custom input:checked + label::after {
+        content: ""; }
+    .custom-container .custom label {
+      position: relative;
+      color: gold; }
+      .custom-container .custom label::before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 20px;
+        border: 1px solid gold; }
+      .custom-container .custom label::after {
+        position: absolute;
+        content: none; }
+  .custom-container .radio label {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 45px; }
+    .custom-container .radio label::before {
+      top: 12px;
+      left: 20px;
+      border-radius: 50%; }
+    .custom-container .radio label::after {
+      background: gold;
+      top: 17px;
+      left: 25px;
+      height: 10px;
+      width: 10px;
+      border-radius: 50%; }
+  .custom-container .checkbox label {
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 45px; }
+    .custom-container .checkbox label::before {
+      top: 12px;
+      left: 20px; }
+    .custom-container .checkbox label::after {
+      top: 18px;
+      left: 25px;
+      height: 5px;
+      width: 9px;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      border-left: 3px solid;
+      border-bottom: 3px solid; }
 
 .author {
-  font-size: 0.7rem;
-}
-
-
-
-/* ########## Custom Radio Button + Checkbox ########## */
-.selection-container {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-/* Hide the default radio button / checkbox */
-.radio input[type="radio"],
-.checkbox input[type="checkbox"] {
-  opacity: 0;
-}
-
-.custom {
-  position: relative;
-  box-sizing: border-box;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-
-  /* Background for each custom radio button / checkbox div */
-  background-image: url('https://i.pinimg.com/originals/44/bf/af/44bfaf7f725670091de541e948274374.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-
-  /* Size of each radio button / checkbox div */
-  width: 161.3px;
-  height: 121px;
-}
-
-.custom label {
-  position: relative;
-  color: gold;
-}
-
-/* label::before = fake radio button / checkbox
-   label::after = fake dot / checkmark */
-.custom label::before, .custom label::after {
-  position: absolute;
-  content: "";
-}
-
-/* Size of fake radio button / checkbox */
-.custom label::before {
-  height: 20px;
-  width: 20px;
-  border: 1px solid gold;
-}
-
-/* Hide the dot and checkmark by default */
-.radio input[type="radio"] + label::after,
-.checkbox input[type="checkbox"] + label::after {
-  content: none;
-}
-
-/* Unhide on the selected state */
-.radio input[type="radio"]:checked + label::after,
-.checkbox input[type="checkbox"]:checked + label::after {
-  content: "";
-}
-/* ########## End Custom Radio Button + Checkbox ########## */
-
-
-
-/* ########## Custom Radio Button ########## */
-.radio label {
-  display: inline-block;
-
-  /* Use padding to move radio label */
-  padding-top: 10px;
-  padding-left: 45px;
-}
-
-/* Fake radio button */
-.radio label::before{
-  /* Use top and left to move the fake radio button */
-  top: 12px;
-  left: 20px;
-
-  /* Create fake radio buttom */
-  border-radius: 50%;
-}
-
-/* Dot for the fake radio button */
-.radio label::after {
-  background: gold;
-
-  /* Use top and left to move the dot */
-  top: 17px;
-  left: 25px;
-
-  /* Size of the dot */
-  height: 10px;
-  width: 10px;
-  border-radius: 50%;
-}
-/* ########## End Custom Radio Button ########## */
-
-
-
-/* ########## Custom Checkbox ########## */
-.checkbox label {
-  display: inline-block;
-
-  /* Use padding to move checkbox label */
-  padding-top: 10px;
-  padding-left: 45px;
-}
-
-/* Fake checkbox */
-.checkbox label::before{
-  /* Use top and left to move the fake checkbox */
-  top: 12px;
-  left: 20px;
-}
-
-/* Checkmark for the fake checkbox */
-.checkbox label::after {
-  /* Use top and left to move the checkmark */
-  top: 18px;
-  left: 25px;
-
-  /* Size of the checkmark */
-  height: 5px;
-  width: 9px;
-
-  /* Create checkmark using the border and transform properties */
-  border-left: 3px solid;
-  border-bottom: 3px solid;
-  transform: rotate(-45deg);
-}
-/* ########## End Custom Checkbox ########## */
-
-
-
-/* ########## Media Query ########## */
-@media screen and (max-width: 800px) {
-  .form-container {
-    width: 95%;
-  }
-}
-/* ########## End Media Query ########## */
+  font-size: 0.7rem; }

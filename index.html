@@ -10,10 +10,10 @@
     <title>Survey Form</title>
   </head>
   <body>
-    <h1 id="title" class="heading">audioStream.com</h1>
+    <h1 id="title">audioStream.com</h1>
 
     <div class="form-container">
-      <h2 id="form-title" class="heading">Feedback Survey</h2>
+      <h2 id="form-title">Feedback Survey</h2>
 
       <div class="container-fluid">
         <p id="description">
@@ -23,7 +23,7 @@
         <form id="survey-form">
           <!-- ********** Name ********** -->
           <div class="form-group form-row">
-            <label for="name" id="name-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Name:</label>
+            <label for="name" id="name-label" class="col-sm-2 col-lg-1 col-form-label required">Name:</label>
             <div class="col">
               <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
             </div>
@@ -31,7 +31,7 @@
 
           <!-- ********** Email ********** -->
           <div class="form-group form-row">
-            <label for="email" id="email-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Email:</label>
+            <label for="email" id="email-label" class="col-sm-2 col-lg-1 col-form-label required">Email:</label>
             <div class="col">
               <input type="email" id="email" class="form-control" placeholder="Enter your email" required>
             </div>
@@ -39,7 +39,7 @@
 
           <!-- ********** Age ********** -->
           <div class="form-group form-row">
-            <label for="age" id="age-label" class="col-2 col-lg-1 col-form-label"><span class="required">* </span>Age:</label>
+            <label for="age" id="age-label" class="col-sm-2 col-lg-1 col-form-label required">Age:</label>
             <div class="col">
               <input type="number" id="age" class="form-control" min="1" max="100" placeholder="Age" required>
             </div>
@@ -47,7 +47,7 @@
 
           <!-- ********** Rating ********** -->
           <p class="instruction">What overall rating would you give us?</p>
-          <div id="rating" class="rating-container mb-4">
+          <div id="rating" class="mb-4">
             <span class="fa fa-star-o fa-2x"></span>
             <span class="fa fa-star-o fa-2x"></span>
             <span class="fa fa-star-o fa-2x"></span>
@@ -63,7 +63,7 @@
           <!-- ********** Average time of use ********** -->
           <div class="form-group form-row">
             <label for="number" id="number-label" class="col-auto col-form-label">On average, how many hours each week do you use the app?</label>
-            <div class="col number-input-div">
+            <div id="number-input-div" class="col">
               <input type="number" id="number" class="form-control" min="0" max="50" placeholder="Hours">
             </div>
           </div>  <!-- End average time of use -->
@@ -83,7 +83,7 @@
 
           <!-- ********** Usually listen to ********** -->
           <p class="instruction">What do you usually listen to:</p>
-          <div class="selection-container">
+          <div class="custom-container">
             <div id="radio-div" class="custom radio">
               <input type="radio" id="radio" name="listen" value="radio">
               <label for="radio" id="radio-label">Live radio</label>
@@ -100,7 +100,7 @@
 
           <!-- ********** Favorite genres ********** -->
           <p class="instruction">Please select all your favorite genres</p>
-          <div class="selection-container">
+          <div class="custom-container">
             <div class="custom checkbox">
               <input type="checkbox" id="alternative" value="alternative">
               <label for="alternative" id="alternative-label">Alternative</label>
@@ -158,9 +158,9 @@
           </div>  <!-- End comments -->
 
           <!-- ********** Buttons ********** -->
-          <div class="form-row">
-            <button type="reset" id="reset" class="col-4 btn btn-secondary">Reset Form</button>
-            <button type="submit" id="submit" class="offset-4 col-4 btn btn-primary">Submit!</button>
+          <div class="form-row justify-content-between">
+            <button type="submit" id="submit" class="col-sm-4 btn btn-primary">Submit!</button>
+            <button type="reset" id="reset" class="col-sm-4 mt-3 mt-sm-0 btn btn-outline-danger">Reset Form</button>
           </div>  <!-- End buttons -->
         </form>  <!-- End #survey-form -->
       </div>  <!-- End .container-fluid -->
@@ -168,7 +168,7 @@
 
     <footer>
       <p class="author">
-        Created by Vivian Seto for the Survey Form project on <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-survey-form/" target="_blank">freeCodeCamp</a>
+        Created by Vivian S for the Survey Form project on <a href="https://learn.freecodecamp.org/responsive-web-design/responsive-web-design-projects/build-a-survey-form/" target="_blank">freeCodeCamp</a>
       </p>
     </footer>
 
@@ -177,4 +177,4 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="script.js"></script>
   </body>
-  </html>
+</html>
